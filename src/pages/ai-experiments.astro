@@ -3,6 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = [
   {
+    name: "The VC Connect",
+    problem: "Most first-time founders in India don't know which VCs invest in their sector or stage, and have no warm intro to any of them. Investor lists are scattered, outdated, or behind paywalls. Good companies get stuck before they get a single meeting.",
+    solution: "A free directory of 200+ Indian VC firms, filterable by sector and stage. Founders can email investors directly, or submit their deck and we pitch it to the funds that fit.",
+    github: "",
+    publication: "",
+    live: "https://thevcconnect.in",
+  },
+  {
     name: "freewispr",
     problem: "Most speech-to-text tools on Windows are paywalled, require cloud uploads, or produce poor results on Indian accents. Whisper AI made local transcription possible, but setting it up required Python environments and command-line work most people won't do.",
     solution: "An open-source Windows app that runs Whisper on your machine. Drop in any audio or video file, pick a model size, get a clean transcript. No cloud, no account, no data leaving your device.",
@@ -70,7 +78,9 @@ const projects = [
           <p class="experiment-problem"><span class="exp-label">Problem</span>{project.problem}</p>
           <p class="experiment-problem"><span class="exp-label">Solution</span>{project.solution}</p>
           <div class="experiment-links">
-            <a href={project.github} target="_blank" rel="noopener noreferrer" class="exp-link">GitHub →</a>
+            {project.github && (
+              <a href={project.github} target="_blank" rel="noopener noreferrer" class="exp-link">GitHub →</a>
+            )}
             {project.publication && (
               <a href={project.publication} target="_blank" rel="noopener noreferrer" class="exp-link">Publication →</a>
             )}
